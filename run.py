@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from db import db
+from app.users.resource import UserResource
 
 def create_app():
     app = Flask(__name__)
@@ -14,6 +15,8 @@ def create_app():
     db.init_app(app)
     with app.app_context():
         db.create_all()
+
+    api.add_resource(UserResource, "/users/register")
 
     return app
 
