@@ -3,6 +3,7 @@ from flask_restful import Api
 from db import db
 from app.users.resource import UserResource
 from app.sms.resource import IncomingSMSResource
+from app.jobs.resource import JobsResource
 
 def create_app():
     app = Flask(__name__)
@@ -19,6 +20,7 @@ def create_app():
 
     api.add_resource(UserResource, "/users/register")
     api.add_resource(IncomingSMSResource, "/sms/inbox")
+    api.add_resource(JobsResource, "/jobs")
 
     return app
 

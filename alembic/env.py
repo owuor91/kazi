@@ -21,6 +21,7 @@ if config.config_file_name is not None:
 from app.base.models import Base
 from app.users.model import User
 from app.sms.model import SMSMessage
+from app.jobs.model import Job
 
 target_metadata = Base.metadata
 
