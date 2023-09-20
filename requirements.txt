@@ -1,8 +1,12 @@
+africastalking==1.2.5
 alembic==1.11.1
 aniso8601==9.0.1
 bcrypt==4.0.1
 blinker==1.6.2
+certifi==2023.7.22
+charset-normalizer==3.2.0
 click==8.1.4
+contextlib2==21.6.0
 flake8==6.0.0
 Flask==2.3.2
 Flask-Alembic==2.0.1
@@ -11,7 +15,9 @@ Flask-JWT-Extended==4.5.2
 Flask-RESTful==0.3.10
 Flask-SQLAlchemy==3.0.5
 greenlet==2.0.2
+idna==3.4
 importlib-metadata==6.8.0
+importlib-resources==6.0.1
 itsdangerous==2.1.2
 Jinja2==3.1.2
 Mako==1.2.4
@@ -24,10 +30,14 @@ psycopg2==2.9.6
 pycodestyle==2.10.0
 pyflakes==3.0.1
 PyJWT==2.7.0
+python-dotenv==1.0.0
 pytz==2023.3
+requests==2.31.0
+schema==0.7.5
 six==1.16.0
 SQLAlchemy==2.0.18
 typed-ast==1.5.5
 typing_extensions==4.7.1
+urllib3==2.0.4
 Werkzeug==2.3.6
 zipp==3.15.0

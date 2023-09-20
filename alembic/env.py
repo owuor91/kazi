@@ -20,6 +20,7 @@ if config.config_file_name is not None:
 # target_metadata = mymodel.Base.metadata
 from app.base.models import Base
 from app.users.model import User
+from app.sms.model import SMSMessage
 
 target_metadata = Base.metadata
 
