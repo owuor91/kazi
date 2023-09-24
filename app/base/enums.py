@@ -8,7 +8,7 @@ class RoleEnum(Enum):
 
 
 class JobCategoryEnum(Enum):
-    CONSTRUCTION = "CONSTRUCTION",
+    CONSTRUCTION = "CONSTRUCTION"
     FARMING = "FARMING"
     WAREHOUSE = "WAREHOUSE"
     PLUMBING = "PLUMBING"
