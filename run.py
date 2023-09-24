@@ -4,6 +4,8 @@ from db import db
 from app.users.resource import UserResource
 from app.sms.resource import IncomingSMSResource, JobNotificationResource
 from app.jobs.resource import JobsResource
+from make_celery import make_celery
+
 
 def create_app():
     app = Flask(__name__)
@@ -23,8 +25,12 @@ def create_app():
     api.add_resource(JobsResource, "/jobs")
     api.add_resource(JobNotificationResource, "/jobs-notification")
 
-    return app
+    celery = make_celery(app)
+    celery.set_default()
 
-app = create_app()
+    return app, celery
+
+
+app, celery = create_app()
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
