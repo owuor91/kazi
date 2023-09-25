@@ -26,7 +26,7 @@ source venv/bin/activate
 Install dependencies
 
 ```commandline
-pip install -r requiurements.txt
+pip install -r requirements.txt
 ```
 
 Run migrations:
