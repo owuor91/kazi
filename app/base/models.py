@@ -42,8 +42,6 @@ def save(obj):
             f"Problem saving {obj.__class__.__name__} record in database"
         )
 
-    return obj
-
 
 def get(model, pk=None):
     """
