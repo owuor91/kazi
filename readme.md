@@ -15,7 +15,21 @@ powered by AfricasTalking.
 
 Set up a local postgres database called `kazi`
 
-Run migrations `alembic upgrade head`
+Create and activate a virtual environment in the project root directory
+
+```commandline
+virtualenv venv
+
+source venv/bin/activate
+```
+
+Install dependencies
+
+```commandline
+pip install -r requiurements.txt
+```
+
+Run migrations: `alembic upgrade head`
 
 Be sure to have installed redis and have it running on your localhost.
 
@@ -51,7 +65,7 @@ on a second terminal
 
 https://help.africastalking.com/en/articles/2206161-how-do-i-configure-my-callback-url
 
-## Wtf is this async BS? I just want to test sending and receiving SMS with AT apis
+### wtf is this async BS? I just want to test sending and receiving SMS with AT apis
 
 Worry not. Just reset head to
 this [commit](https://github.com/owuor91/kazi/commit/bb8e3690eb57d057d03d277e3257ef0c6fb80661),

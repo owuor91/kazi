@@ -15,6 +15,7 @@ def create_app():
         "SQLALCHEMY_DATABASE_URI"
     ] = "postgresql+psycopg2:///kazi"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config['SQLALCHEMY_POOL_SIZE'] = 10
 
     db.init_app(app)
     with app.app_context():
