@@ -29,7 +29,11 @@ Install dependencies
 pip install -r requiurements.txt
 ```
 
-Run migrations: `alembic upgrade head`
+Run migrations:
+
+```commandline
+alembic upgrade head
+```
 
 Be sure to have installed redis and have it running on your localhost.
 
@@ -44,7 +48,8 @@ AT_API_KEY=YOUR_AT_API_KEY
 AfricasTalking requires that the service sends back a 200 response for
 every received message for them to stop resending it to our callback url.
 
-Kazi therefore processes received messages asynchronously with the help of
+Kazi therefore immediately returns a 200 response to africastalking each
+time a message is received then processes it asynchronously with the help of
 celery, with redis as the broker.
 For this reason to run this service you will have to run
 
