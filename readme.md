@@ -70,12 +70,13 @@ on a second terminal
 
 https://help.africastalking.com/en/articles/2206161-how-do-i-configure-my-callback-url
 
-### wtf is this async BS? I just want to test sending and receiving SMS with AT apis
+### wtf is this async bs? I just want to test sending and receiving SMS with AT apis
 
-Worry not. Just reset head to
-this [commit](https://github.com/owuor91/kazi/commit/bb8e3690eb57d057d03d277e3257ef0c6fb80661),
-and you're good to go
+Worry not. Just checkout this
+[branch](https://github.com/owuor91/kazi/tree/feature/synchronoushttps://github.com/owuor91/kazi/tree/feature/synchronous),
+with the synchronous implementation and you're good to go
 
 ```commandline
-git reset --hard bb8e3690eb57d057d03d277e3257ef0c6fb80661
+git pull origin feature/synchronous
+git checkout feature/synchronous
 ```
