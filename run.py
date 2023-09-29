@@ -26,12 +26,9 @@ def create_app():
     api.add_resource(JobsResource, "/jobs")
     api.add_resource(JobNotificationResource, "/jobs-notification")
 
-    celery = make_celery(app)
-    celery.set_default()
-
-    return app, celery
+    return app
 
 
-app, celery = create_app()
+app = create_app()
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

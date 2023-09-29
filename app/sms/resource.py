@@ -14,7 +14,6 @@ from sqlalchemy import and_
 from datetime import date
 from app.base.enums import RoleEnum
 from uuid import uuid4
-from celery import shared_task
 from app.base.exceptions import DatabaseError
 
 sms_sender = SMSSender()
@@ -32,12 +31,11 @@ class IncomingSMSResource(Resource):
         sms_data['date'] = data['date']
         sms_data['sender'] = data['from']
         sms_data['text'] = data['text']
-        save_sms.delay(sms_data)
-        handle_sms_async.delay(sms_data)
+        save_sms(sms_data)
+        handle_sms(sms_data)
         return Response(status=200)
 
 
-@shared_task(serializer='json')
 def save_sms(sms_data):
     try:
         item = SMSMessage(**sms_data)
@@ -47,8 +45,7 @@ def save_sms(sms_data):
         raise DatabaseError(e.args)
 
 
-@shared_task
-def handle_sms_async(sms_data):
+def handle_sms(sms_data):
     item = SMSMessage(**sms_data)
     if item.text.lower() == 'register':
         message = "Welcome to Kazi. Reply with 1 for Jobseeker or 2 " \
