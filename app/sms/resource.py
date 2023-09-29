@@ -131,7 +131,8 @@ def count_jobs_in_category(category):
 
 def get_job_by_code(job_code):
     return session.query(Job).filter(
-        Job.job_code == job_code).first()
+        and_(Job.job_code == job_code,
+             Job.date == date.today())).first()
 
 
 def handle_job_category_message(sms_data):
