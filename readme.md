@@ -73,7 +73,7 @@ https://help.africastalking.com/en/articles/2206161-how-do-i-configure-my-callba
 ### wtf is this async bs? I just want to test sending and receiving SMS with AT apis
 
 Worry not. Just checkout this
-[branch](https://github.com/owuor91/kazi/tree/feature/synchronoushttps://github.com/owuor91/kazi/tree/feature/synchronous),
+[branch](https://github.com/owuor91/kazi/tree/feature/synchronous),
 with the synchronous implementation and you're good to go
 
 ```commandline
